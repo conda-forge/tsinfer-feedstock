@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tsinfer=tsinfer.__main__:main
@@ -28,8 +28,7 @@ requirements:
   run:
     - attrs >=19.2.0
     - daiquiri
-    - humanize
-    - lmdb
+    - humanize   
     - python-lmdb
     - numcodecs >=0.6
     - python
