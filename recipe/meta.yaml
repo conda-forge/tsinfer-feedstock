@@ -28,8 +28,7 @@ requirements:
   run:
     - attrs >=19.2.0
     - daiquiri
-    - humanize
-    - lmdb
+    - humanize   
     - python-lmdb
     - numcodecs >=0.6
     - python
