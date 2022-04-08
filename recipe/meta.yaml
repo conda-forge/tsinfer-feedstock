@@ -1,6 +1,6 @@
 {% set name = "tsinfer" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "d36f897de8f5f07a98bd0cff2ff5f8f89d9a7444c44d0c6d34ee991e9a4836fb" %}
+{% set version = "0.2.3" %}
+{% set sha256 = "4627f033467920d0fae733e9fe10862320ede5176194135a2ff88bae4e44dd42" %}
 
 package:
   name: {{ name|lower }}
@@ -11,11 +11,11 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tsinfer=tsinfer.__main__:main
-  skip: true   # [py<37]
+  skip: true  # [py<37]
 
 requirements:
   build:
@@ -28,7 +28,7 @@ requirements:
   run:
     - attrs >=19.2.0
     - daiquiri
-    - humanize   
+    - humanize
     - python-lmdb
     - numcodecs >=0.6
     - python
