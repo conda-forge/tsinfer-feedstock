@@ -11,7 +11,7 @@ Summary: Infer tree sequences
 
 Development: https://github.com/tskit-dev/tsinfer
 
-Documentation: https://tsinfer.readthedocs.io/en/stable
+Documentation: https://tskit.dev/tsinfer/docs
 
 tsinfer infers succinct tree sequences from observed genetic variation data
 
