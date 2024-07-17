@@ -1,6 +1,6 @@
 {% set name = "tsinfer" %}
-{% set version = "0.3.2" %}
-{% set sha256 = "3285edba8c702fa6ecefed22f67cdd158928203d82633984df93574193ac1eee" %}
+{% set version = "0.3.3" %}
+{% set sha256 = "0ecdc079bbd32eafe3c0b56c8e901528347daafd504bb295ecb8050a4209fc90" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tsinfer=tsinfer.__main__:main
