@@ -1,6 +1,6 @@
 {% set name = "tsinfer" %}
-{% set version = "0.3.1" %}
-{% set sha256 = "747402c30cf6fee3e3b4504f0e89fe51069f8e0406acfb6580a231b932fe49ef" %}
+{% set version = "0.3.2" %}
+{% set sha256 = "3285edba8c702fa6ecefed22f67cdd158928203d82633984df93574193ac1eee" %}
 
 package:
   name: {{ name|lower }}
@@ -11,16 +11,23 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tsinfer=tsinfer.__main__:main
-  skip: true  # [py<37]
+  skip: true  # [py<39]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
+    # Support for osx_arm64 as per
+    # https://conda-forge.org/blog/posts/2020-10-29-macos-arm64/#how-to-add-a-osx-arm64-build-to-a-feedstock
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
   host:
     - numpy
     - pip
