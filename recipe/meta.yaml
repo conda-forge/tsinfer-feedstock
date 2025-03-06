@@ -1,17 +1,17 @@
 {% set name = "tsinfer" %}
-{% set version = "0.3.3" %}
-{% set sha256 = "0ecdc079bbd32eafe3c0b56c8e901528347daafd504bb295ecb8050a4209fc90" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "200f057f732ff957fa07a560dc9a333688acdb9b6574435f37c00b2949d84288" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tsinfer-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tsinfer-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tsinfer=tsinfer.__main__:main
