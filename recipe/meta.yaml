@@ -1,6 +1,6 @@
 {% set name = "tsinfer" %}
-{% set version = "0.4.2" %}
-{% set sha256 = "10fd0e8632da87a1ce82ddeadbdb574f6fe47353553f937d999af146673dbf29" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "56047e24b1b6b1735112d0ed4c40342d69bfa8f558715bce0f89fbd3db58067e" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
