@@ -1,6 +1,6 @@
 {% set name = "tsinfer" %}
-{% set version = "0.5.0" %}
-{% set sha256 = "56047e24b1b6b1735112d0ed4c40342d69bfa8f558715bce0f89fbd3db58067e" %}
+{% set version = "0.5.1" %}
+{% set sha256 = "c6c6b1b658ed24a08eb8017a92b67e5bef07009b439c78eab294e144faf2df30" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -10,11 +10,11 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tsinfer=tsinfer.__main__:main
-  skip: true  # [py<39]
+  skip: true  # [py<311]
 
 requirements:
   build:
