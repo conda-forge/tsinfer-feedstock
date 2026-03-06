@@ -14,7 +14,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tsinfer=tsinfer.__main__:main
-  skip: true  # [py<39]
+  skip: true  # [py<311]
 
 requirements:
   build:
